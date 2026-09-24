@@ -1,68 +1,636 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="h-full">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常用软件与网站导航</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
-        h1 { color: #333; }
-        h3 { color: #0266c8; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px; }
-        ul { padding-left: 20px; }
-        li { margin: 8px 0; }
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .dark .glass-panel {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(156, 163, 175, 0.5);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(107, 114, 128, 0.8);
+        }
     </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-slate-50 via-sky-50/30 to-indigo-50/40 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 min-h-full text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white pb-16">
 
-    <h1>常用软件与网站导航</h1>
-    <p>点击以下链接会在浏览器上方的新标签页中打开：</p>
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-200/60 dark:border-slate-800/80 shadow-sm backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
+                    <i class="fa-solid fa-compass text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400 bg-clip-text text-transparent">常用软件与网站导航</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">点击链接会在浏览器上方新标签页中打开</p>
+                </div>
+            </div>
+            
+            <!-- Search bar -->
+            <div class="relative w-full max-w-xs sm:max-w-sm">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                    <i class="fa-solid fa-search text-sm"></i>
+                </div>
+                <input type="text" id="searchInput" placeholder="搜索网站、工具、描述..." class="w-full pl-10 pr-4 py-2 bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/50 transition-all shadow-inner">
+                <button id="clearSearch" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hidden">
+                    <i class="fa-solid fa-circle-xmark text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <h3>🌐 官方与节点、云服务</h3>
-    <ul>
-        <li><a href="https://minepi.com/" target="_blank">Pi Network官方网站</a></li>
-        <li><a href="https://github.com/pi-node/pi-node/releases" target="_blank">Pi Network官方节点安装包下载网站</a></li>
-        <li><a href="https://my.racknerd.com/" target="_blank">racknerd云服购买平台</a></li>
-        <li><a href="https://www.aliyun.com/" target="_blank">阿里云云服官方网站</a></li>
-        <li><a href="https://cloud.tencent.com/" target="_blank">腾讯云服官方网站</a></li>
-        <li><a href="https://docs.docker.com/desktop/release-notes/" target="_blank">docker官方网站</a></li>
-    </ul>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        
+        <!-- Quick stats / Info bar -->
+        <div class="mb-8 flex flex-wrap items-center justify-between gap-4 bg-white/60 dark:bg-slate-900/60 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/80 shadow-sm backdrop-blur-sm">
+            <div class="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-300">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>当前收录 <strong id="totalCount" class="text-slate-900 dark:text-white font-semibold">27</strong> 个精选快捷网址</span>
+            </div>
+            <div class="flex items-center space-x-3 text-xs">
+                <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 rounded-lg font-medium border border-indigo-100 dark:border-indigo-900/50">支持实时搜索</span>
+                <span class="px-3 py-1 bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 rounded-lg font-medium border border-purple-100 dark:border-purple-900/50">4宫格现代网格</span>
+            </div>
+        </div>
 
-    <h3>🛠️ 代理与科学上网工具</h3>
-    <ul>
-        <li><a href="https://github.com/2dust/v2rayN/releases" target="_blank">v2rayN官方开源网站</a></li>
-        <li><a href="https://github.com/KaringX/karing/releases" target="_blank">Karing官方开源网站</a></li>
-        <li><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank">Clash Verge官方网站</a></li>
-        <li><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank">ClashMeta官方开源安卓版</a></li>
-        <li><a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank">mihomo-party官方开源</a></li>
-        <li><a href="https://github.com/SagerNet/sing-box/releases" target="_blank">SingBox官方开源网站</a></li>
-        <li><a href="https://github.com/fatedier/frp/releases" target="_blank">frp官方开源网站</a></li>
-        <li><a href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank">自用frp仓库</a></li>
-        <li><a href="https://github.com/ehang-io/nps/releases/" target="_blank">NPS官方开源网站</a></li>
-    </ul>
+        <!-- No search results message -->
+        <div id="noResults" class="hidden text-center py-20">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 text-xl">
+                <i class="fa-solid fa-face-confused"></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-700 dark:text-slate-300">没有找到相关链接</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">请尝试更换关键词搜索，或清除搜索框查看全部</p>
+            <button onclick="document.getElementById('searchInput').value=''; filterLinks();" class="mt-4 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-xl shadow-md transition-all">清除搜索条件</button>
+        </div>
 
-    <h3>💻 远程与运维</h3>
-    <ul>
-        <li><a href="https://www.hostbuf.com/" target="_blank">finalshell官方网址</a></li>
-        <li><a href="https://www.todesk.com/" target="_blank">ToDesk官方远程网站</a></li>
-        <li><a href="https://www.deskin.io/zht" target="_blank">deskin远程官方网站</a></li>
-        <li><a href="https://sunlogin.oray.com" target="_blank">向日葵远程官方网站</a></li>
-        <li><a href="https://uuyc.163.com/" target="_blank">UU远程官方网站</a></li>
-        <li><a href="https://www.raylink.live" target="_blank">RayLink远程官方网站</a></li>
-    </ul>
+        <!-- 4-Grid Layout container -->
+        <div id="categoriesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
 
-    <h3>📦 其他下载与检测工具</h3>
-    <ul>
-        <li><a href="https://apkcombo.com/zh/" target="_blank">手机app下载平台（需要梯子）</a></li>
-        <li><a href="https://github.com/microsoft/WSL/releases" target="_blank">WSL2下载地址</a></li>
-        <li><a href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank">OpenVPN 官方电脑安装包下载（需要梯子）</a></li>
-        <li><a href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank">OpenVPN 官方开源社区版安装包gui版下载（需要梯子）</a></li>
-        <li><a href="https://github.com/lmc999/auto-add-routes" target="_blank">openvpn分流路由表</a></li>
-        <li><a href="https://www.wireguard.com/install/" target="_blank">wireguard官方</a></li>
-        <li><a href="https://ip.skk.moe/" target="_blank">查分流</a></li>
-        <li><a href="https://ping0.cc/" target="_blank">检测 IP 质量 (ping0.cc)</a></li>
-        <li><a href="https://ipdata.co/" target="_blank">检测 IP 质量 (ipdata.co)</a></li>
-    </ul>
+            <!-- Category 1: 官方与节点、云服务 -->
+            <div class="category-card bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/70 dark:border-slate-800/80 shadow-xl shadow-slate-200/50 dark:shadow-none backdrop-blur-md flex flex-col">
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center text-lg shadow-sm">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 dark:text-white">官方与节点、云服务</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">主流云厂商与区块链节点平台</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-grow">
+                    <!-- Link Item -->
+                    <a href="https://minepi.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-sky-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-sky-200 dark:hover:border-sky-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-sky-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-coins text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400 truncate transition-colors">Pi Network官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">minepi.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
 
+                    <a href="https://github.com/pi-node/pi-node/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-sky-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-sky-200 dark:hover:border-sky-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-sky-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-github text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400 truncate transition-colors">Pi Network节点安装包</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">github.com/pi-node</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://my.racknerd.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-sky-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-sky-200 dark:hover:border-sky-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-sky-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-server text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400 truncate transition-colors">racknerd云服购买平台</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">my.racknerd.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.aliyun.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-sky-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-sky-200 dark:hover:border-sky-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-cloud text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400 truncate transition-colors">阿里云云服官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">aliyun.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://cloud.tencent.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-sky-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-sky-200 dark:hover:border-sky-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-blue-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-cloud-arrow-down text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400 truncate transition-colors">腾讯云服官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">cloud.tencent.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://docs.docker.com/desktop/release-notes/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-sky-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-sky-200 dark:hover:border-sky-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-cyan-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-docker text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400 truncate transition-colors">docker官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">docs.docker.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2: 代理与科学上网工具 -->
+            <div class="category-card bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/70 dark:border-slate-800/80 shadow-xl shadow-slate-200/50 dark:shadow-none backdrop-blur-md flex flex-col">
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 dark:text-white">代理与科学上网工具</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">常用加速、代理、面板与转发工具</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-grow">
+                    <a href="https://github.com/2dust/v2rayN/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bolt text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">v2rayN官方开源网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">github.com/2dust/v2rayN</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/KaringX/karing/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">Karing官方开源网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">github.com/KaringX</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-network-wired text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">Clash Verge官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">clash-verge-rev</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-android text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">ClashMeta官方开源安卓版</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">ClashMetaForAndroid</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-chess-board text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">mihomo-party官方开源</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">mihomo-party-org</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-box text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">SingBox官方开源网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">sing-box releases</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/fatedier/frp/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-shuffle text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">frp官方开源网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">fatedier/frp</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-zipper text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">自用frp仓库</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">frp_0.71.0 windows zip</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/ehang-io/nps/releases/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-amber-200 dark:hover:border-amber-800/60 card-hover sm:col-span-2">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-laptop-code text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 truncate transition-colors">NPS官方开源网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">ehang-io/nps releases</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 3: 远程与运维 -->
+            <div class="category-card bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/70 dark:border-slate-800/80 shadow-xl shadow-slate-200/50 dark:shadow-none backdrop-blur-md flex flex-col">
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg shadow-sm">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 dark:text-white">远程与运维</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">远程桌面、SSH终端与连接工具</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-grow">
+                    <a href="https://www.hostbuf.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-200 dark:hover:border-indigo-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-terminal text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">finalshell官方网址</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">hostbuf.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.todesk.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-200 dark:hover:border-indigo-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-computer text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">ToDesk官方远程网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">todesk.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.deskin.io/zht" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-200 dark:hover:border-indigo-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-display text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">deskin远程官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">deskin.io</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://sunlogin.oray.com" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-200 dark:hover:border-indigo-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-sun text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">向日葵远程官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">sunlogin.oray.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://uuyc.163.com/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-200 dark:hover:border-indigo-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-gamepad text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">UU远程官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">uuyc.163.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.raylink.live" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-indigo-200 dark:hover:border-indigo-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bolt-lightning text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">RayLink远程官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">raylink.live</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 4: 其他下载与检测工具 -->
+            <div class="category-card bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/70 dark:border-slate-800/80 shadow-xl shadow-slate-200/50 dark:shadow-none backdrop-blur-md flex flex-col">
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg shadow-sm">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 dark:text-white">其他下载与检测工具</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">应用商店、VPN包与IP质量检测</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-grow">
+                    <a href="https://apkcombo.com/zh/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-mobile-screen text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">手机app下载平台</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">apkcombo.com (需梯子)</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/microsoft/WSL/releases" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-windows text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">WSL2下载地址</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">microsoft/WSL</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">OpenVPN 官方安装包</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">openvpn.net (需梯子)</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-code-branch text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">OpenVPN 社区版gui版</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">swupdate.openvpn.org</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/lmc999/auto-add-routes" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-route text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">openvpn分流路由表</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">lmc999/auto-add-routes</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.wireguard.com/install/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-shield text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">wireguard官方网站</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">wireguard.com</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://ip.skk.moe/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-gauge-high text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">查分流检测</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">ip.skk.moe</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://ping0.cc/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-globe text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">检测 IP 质量 (ping0)</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">ping0.cc</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://ipdata.co/" target="_blank" class="nav-item group flex items-start p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-100 dark:border-slate-800/80 hover:border-purple-200 dark:hover:border-purple-800/60 card-hover sm:col-span-2">
+                        <div class="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-chart-pie text-xs"></i>
+                        </div>
+                        <div class="ml-3 flex-grow min-w-0">
+                            <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 truncate transition-colors">检测 IP 质量 (ipdata)</div>
+                            <div class="text-xs text-slate-400 dark:text-slate-500 truncate mt-0.5">ipdata.co</div>
+                        </div>
+                        <div class="ml-1 text-slate-300 dark:text-slate-600 group-hover:text-purple-500 transition-colors self-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="mt-20 text-center text-xs text-slate-400 dark:text-slate-500">
+        <p>常用软件与网站导航 &copy; 2026 | 现代化多列卡片网格导航站</p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const navItems = document.querySelectorAll('.nav-item');
+        const categoryCards = document.querySelectorAll('.category-card');
+        const noResults = document.getElementById('noResults');
+
+        function filterLinks() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (query.length > 0) {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+
+            let totalVisibleItems = 0;
+
+            categoryCards.forEach(card => {
+                const items = card.querySelectorAll('.nav-item');
+                let visibleCountInCard = 0;
+
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    const href = item.getAttribute('href').toLowerCase();
+                    
+                    if (text.includes(query) || href.includes(query)) {
+                        item.style.display = 'flex';
+                        visibleCountInCard++;
+                        totalVisibleItems++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Hide entire category card if no links match inside it
+                if (visibleCountInCard === 0) {
+                    card.style.display = 'none';
+                } else {
+                    card.style.display = 'flex';
+                }
+            });
+
+            if (totalVisibleItems === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        searchInput.addEventListener('input', filterLinks);
+
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterLinks();
+            searchInput.focus();
+        });
+
+        // Keyboard shortcut: pressing '/' focuses search
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+    </script>
 </body>
 </html>
