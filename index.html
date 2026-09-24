@@ -31,632 +31,640 @@
                 <i data-lucide="search" class="w-5 h-5"></i>
             </span>
             <input type="text" id="searchInput" placeholder="搜索网站名称或关键词..." 
-                class="w-full pl-11 pr-4 py-3 bg-white/80 backdrop-blur-md border border-slate-200 rounded-2xl shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                class="w-full pl-11 pr-4 py-3 bg-white/85 backdrop-blur-md border border-slate-200 rounded-2xl shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
         </div>
     </header>
 
-    <!-- 主要内容区域（严格划分为4大类，每类保持4宫格网格） -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12" id="navContainer">
+    <!-- 主要内容区域（2x2 四宫格大分类布局） -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8" id="navContainer">
 
         <!-- 1. 官方与节点、云服务 -->
-        <section class="category-section">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="p-2 bg-blue-100 text-blue-600 rounded-xl">
-                    <i data-lucide="globe" class="w-6 h-6"></i>
-                </div>
-                <h2 class="text-xl font-bold text-slate-900">官方与节点、云服务</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center p-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=minepi.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
-                            </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://minepi.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://minepi.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <a href="https://minepi.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">Pi Network官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://minepi.com/</p>
+        <section class="category-section bg-white/75 backdrop-blur-md border border-slate-200/80 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100">
+                    <div class="p-2 bg-blue-100 text-blue-600 rounded-xl">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
                     </div>
+                    <h2 class="text-lg font-bold text-slate-900">官方与节点、云服务</h2>
                 </div>
-
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center p-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center p-1.5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=minepi.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://minepi.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://minepi.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/pi-node/pi-node/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/pi-node/pi-node/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://minepi.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">Pi Network官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://minepi.com/</p>
                         </div>
-                        <a href="https://github.com/pi-node/pi-node/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">Pi官方节点安装包下载</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/pi-node/pi-node/releases</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center p-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=racknerd.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center p-1.5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/pi-node/pi-node/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/pi-node/pi-node/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://my.racknerd.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://my.racknerd.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/pi-node/pi-node/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">Pi官方节点安装包下载</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/pi-node/pi-node/releases</p>
                         </div>
-                        <a href="https://my.racknerd.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">racknerd云服购买平台</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://my.racknerd.com/</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center p-2 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=aliyun.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center p-1.5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=racknerd.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://my.racknerd.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://my.racknerd.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://www.aliyun.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://www.aliyun.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://my.racknerd.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">racknerd云服购买平台</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://my.racknerd.com/</p>
                         </div>
-                        <a href="https://www.aliyun.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">阿里云云服官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://www.aliyun.com/</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center p-2 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=cloud.tencent.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center p-1.5 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=aliyun.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://www.aliyun.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://www.aliyun.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://cloud.tencent.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://cloud.tencent.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://www.aliyun.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">阿里云云服官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://www.aliyun.com/</p>
                         </div>
-                        <a href="https://cloud.tencent.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">腾讯云服官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://cloud.tencent.com/</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center p-2 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=docker.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center p-1.5 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=cloud.tencent.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://cloud.tencent.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://cloud.tencent.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://docs.docker.com/desktop/release-notes/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://docs.docker.com/desktop/release-notes/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://cloud.tencent.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">腾讯云服官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://cloud.tencent.com/</p>
                         </div>
-                        <a href="https://docs.docker.com/desktop/release-notes/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">docker官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">docs.docker.com/desktop</p>
+                    </div>
+
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center p-1.5 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=docker.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://docs.docker.com/desktop/release-notes/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://docs.docker.com/desktop/release-notes/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://docs.docker.com/desktop/release-notes/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">docker官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">docs.docker.com/desktop</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 2. 代理与科学上网工具 -->
-        <section class="category-section">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="p-2 bg-indigo-100 text-indigo-600 rounded-xl">
-                    <i data-lucide="wrench" class="w-6 h-6"></i>
-                </div>
-                <h2 class="text-xl font-bold text-slate-900">代理与科学上网工具</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
-                            </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/2dust/v2rayN/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/2dust/v2rayN/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <a href="https://github.com/2dust/v2rayN/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">v2rayN官方开源网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/2dust/v2rayN</p>
+        <section class="category-section bg-white/75 backdrop-blur-md border border-slate-200/80 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100">
+                    <div class="p-2 bg-indigo-100 text-indigo-600 rounded-xl">
+                        <i data-lucide="wrench" class="w-5 h-5"></i>
                     </div>
+                    <h2 class="text-lg font-bold text-slate-900">代理与科学上网工具</h2>
                 </div>
-
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/2dust/v2rayN/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/2dust/v2rayN/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/KaringX/karing/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/KaringX/karing/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/2dust/v2rayN/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">v2rayN官方开源网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/2dust/v2rayN</p>
                         </div>
-                        <a href="https://github.com/KaringX/karing/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">Karing官方开源网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/KaringX/karing</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/KaringX/karing/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/KaringX/karing/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/clash-verge-rev/clash-verge-rev/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/KaringX/karing/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">Karing官方开源网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/KaringX/karing</p>
                         </div>
-                        <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">Clash Verge官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">clash-verge-rev</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center p-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/clash-verge-rev/clash-verge-rev/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/MetaCubeX/ClashMetaForAndroid/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">Clash Verge官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">clash-verge-rev</p>
                         </div>
-                        <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">ClashMeta官方开源安卓版</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">ClashMetaForAndroid</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center p-1.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/MetaCubeX/ClashMetaForAndroid/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/mihomo-party-org/clash-party/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">ClashMeta官方开源安卓版</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">ClashMetaForAndroid</p>
                         </div>
-                        <a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">mihomo-party官方开源</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">mihomo-party-org</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/mihomo-party-org/clash-party/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/SagerNet/sing-box/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">mihomo-party官方开源</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">mihomo-party-org</p>
                         </div>
-                        <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">SingBox官方开源网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/SagerNet/sing-box</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/SagerNet/sing-box/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/fatedier/frp/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/fatedier/frp/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">SingBox官方开源网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/SagerNet/sing-box</p>
                         </div>
-                        <a href="https://github.com/fatedier/frp/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">frp官方开源网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/fatedier/frp</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center p-2 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/fatedier/frp/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/fatedier/frp/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/fatedier/frp/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">frp官方开源网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/fatedier/frp</p>
                         </div>
-                        <a href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">自用frp仓库</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">frp_0.71.0_windows_amd64.zip</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center p-2 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center p-1.5 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/ehang-io/nps/releases/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/ehang-io/nps/releases/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">自用frp仓库</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">frp_0.71.0_windows_amd64.zip</p>
                         </div>
-                        <a href="https://github.com/ehang-io/nps/releases/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">NPS官方开源网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/ehang-io/nps</p>
+                    </div>
+
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center p-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/ehang-io/nps/releases/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/ehang-io/nps/releases/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ehang-io/nps/releases/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">NPS官方开源网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/ehang-io/nps</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. 远程与运维 -->
-        <section class="category-section">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="p-2 bg-purple-100 text-purple-600 rounded-xl">
-                    <i data-lucide="laptop" class="w-6 h-6"></i>
-                </div>
-                <h2 class="text-xl font-bold text-slate-900">远程与运维</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center p-2 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=hostbuf.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
-                            </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://www.hostbuf.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://www.hostbuf.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <a href="https://www.hostbuf.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">finalshell官方网址</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://www.hostbuf.com/</p>
+        <section class="category-section bg-white/75 backdrop-blur-md border border-slate-200/80 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100">
+                    <div class="p-2 bg-purple-100 text-purple-600 rounded-xl">
+                        <i data-lucide="laptop" class="w-5 h-5"></i>
                     </div>
+                    <h2 class="text-lg font-bold text-slate-900">远程与运维</h2>
                 </div>
-
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center p-2 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=todesk.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center p-1.5 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=hostbuf.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://www.hostbuf.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://www.hostbuf.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://www.todesk.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://www.todesk.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://www.hostbuf.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">finalshell官方网址</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://www.hostbuf.com/</p>
                         </div>
-                        <a href="https://www.todesk.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">ToDesk官方远程网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://www.todesk.com/</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center p-2 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=deskin.io&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center p-1.5 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=todesk.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://www.todesk.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://www.todesk.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://www.deskin.io/zht')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://www.deskin.io/zht" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://www.todesk.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">ToDesk官方远程网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://www.todesk.com/</p>
                         </div>
-                        <a href="https://www.deskin.io/zht" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">deskin远程官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://www.deskin.io</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center p-2 group-hover:bg-yellow-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=oray.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center p-1.5 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=deskin.io&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://www.deskin.io/zht')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://www.deskin.io/zht" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://sunlogin.oray.com')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://sunlogin.oray.com" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://www.deskin.io/zht" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">deskin远程官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://www.deskin.io</p>
                         </div>
-                        <a href="https://sunlogin.oray.com" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">向日葵远程官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">sunlogin.oray.com</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center p-2 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=163.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-yellow-50 flex items-center justify-center p-1.5 group-hover:bg-yellow-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=oray.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://sunlogin.oray.com')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://sunlogin.oray.com" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://uuyc.163.com/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://uuyc.163.com/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://sunlogin.oray.com" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">向日葵远程官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">sunlogin.oray.com</p>
                         </div>
-                        <a href="https://uuyc.163.com/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">UU远程官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://uuyc.163.com/</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center p-2 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=raylink.live&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center p-1.5 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=163.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://uuyc.163.com/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://uuyc.163.com/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://www.raylink.live')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://www.raylink.live" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://uuyc.163.com/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">UU远程官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://uuyc.163.com/</p>
                         </div>
-                        <a href="https://www.raylink.live" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">RayLink远程官方网站</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://www.raylink.live</p>
+                    </div>
+
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center p-1.5 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=raylink.live&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://www.raylink.live')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://www.raylink.live" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://www.raylink.live" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">RayLink远程官方网站</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://www.raylink.live</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 4. 其他下载与检测工具 -->
-        <section class="category-section">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="p-2 bg-emerald-100 text-emerald-600 rounded-xl">
-                    <i data-lucide="package" class="w-6 h-6"></i>
-                </div>
-                <h2 class="text-xl font-bold text-slate-900">其他下载与检测工具</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center p-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=apkcombo.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
-                            </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://apkcombo.com/zh/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://apkcombo.com/zh/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <a href="https://apkcombo.com/zh/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">手机app下载平台（需梯子）</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://apkcombo.com/zh/</p>
+        <section class="category-section bg-white/75 backdrop-blur-md border border-slate-200/80 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+                <div class="flex items-center space-x-3 mb-5 pb-3 border-b border-slate-100">
+                    <div class="p-2 bg-emerald-100 text-emerald-600 rounded-xl">
+                        <i data-lucide="package" class="w-5 h-5"></i>
                     </div>
+                    <h2 class="text-lg font-bold text-slate-900">其他下载与检测工具</h2>
                 </div>
-
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center p-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center p-1.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=apkcombo.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://apkcombo.com/zh/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://apkcombo.com/zh/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/microsoft/WSL/releases')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/microsoft/WSL/releases" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://apkcombo.com/zh/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">手机app下载平台（需梯子）</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://apkcombo.com/zh/</p>
                         </div>
-                        <a href="https://github.com/microsoft/WSL/releases" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">WSL2下载地址</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/microsoft/WSL</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center p-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=openvpn.net&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center p-1.5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/microsoft/WSL/releases')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/microsoft/WSL/releases" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://openvpn.net/downloads/openvpn-connect-v3-windows.msi')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/microsoft/WSL/releases" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">WSL2下载地址</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/microsoft/WSL</p>
                         </div>
-                        <a href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">OpenVPN Connect v3 安装包</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">openvpn-connect-v3-windows.msi</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center p-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=openvpn.org&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center p-1.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=openvpn.net&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://openvpn.net/downloads/openvpn-connect-v3-windows.msi')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">OpenVPN Connect v3 安装包</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">openvpn-connect-v3-windows.msi</p>
                         </div>
-                        <a href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">OpenVPN 2.7.7 社区版 GUI 安装包</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">OpenVPN-2.7.7-I001-amd64.msi</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center p-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center p-1.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=openvpn.org&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://github.com/lmc999/auto-add-routes')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://github.com/lmc999/auto-add-routes" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">OpenVPN 2.7.7 社区版 GUI 安装包</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">OpenVPN-2.7.7-I001-amd64.msi</p>
                         </div>
-                        <a href="https://github.com/lmc999/auto-add-routes" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">openvpn分流路由表</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">github.com/lmc999/auto-add-routes</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center p-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=wireguard.com&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center p-1.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://github.com/lmc999/auto-add-routes')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://github.com/lmc999/auto-add-routes" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://www.wireguard.com/install/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://www.wireguard.com/install/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/lmc999/auto-add-routes" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">openvpn分流路由表</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">github.com/lmc999/auto-add-routes</p>
                         </div>
-                        <a href="https://www.wireguard.com/install/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">wireguard官方</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://www.wireguard.com</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center p-2 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=skk.moe&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center p-1.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=wireguard.com&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://www.wireguard.com/install/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://www.wireguard.com/install/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://ip.skk.moe/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://ip.skk.moe/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://www.wireguard.com/install/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">wireguard官方</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://www.wireguard.com</p>
                         </div>
-                        <a href="https://ip.skk.moe/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">查分流 (ip.skk.moe)</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://ip.skk.moe/</p>
                     </div>
-                </div>
 
-                <div class="nav-card group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-5 shadow-xs hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center p-2 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
-                                <img src="https://www.google.com/s2/favicons?domain=ping0.cc&sz=128" alt="Logo" class="w-6 h-6 object-contain">
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center p-1.5 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=skk.moe&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://ip.skk.moe/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://ip.skk.moe/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-1">
-                                <button onclick="copyUrl(event, 'https://ping0.cc/')" title="复制网址" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
-                                    <i data-lucide="copy" class="w-4 h-4"></i>
-                                </button>
-                                <a href="https://ping0.cc/" target="_blank" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                </a>
-                            </div>
+                            <a href="https://ip.skk.moe/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">查分流 (ip.skk.moe)</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://ip.skk.moe/</p>
                         </div>
-                        <a href="https://ping0.cc/" target="_blank" class="block font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-1">检测 IP 质量 (ping0.cc)</a>
-                        <p class="text-xs text-slate-400 line-clamp-1">https://ping0.cc/</p>
+                    </div>
+
+                    <div class="nav-card group relative bg-white/90 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 shadow-xs hover:shadow-lg hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center p-1.5 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 overflow-hidden">
+                                    <img src="https://www.google.com/s2/favicons?domain=ping0.cc&sz=128" alt="Logo" class="w-5 h-5 object-contain">
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <button onclick="copyUrl(event, 'https://ping0.cc/')" title="复制网址" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                    <a href="https://ping0.cc/" target="_blank" class="p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://ping0.cc/" target="_blank" class="block font-semibold text-slate-800 text-sm group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">检测 IP 质量 (ping0.cc)</a>
+                            <p class="text-[11px] text-slate-400 line-clamp-1">https://ping0.cc/</p>
+                        </div>
                     </div>
                 </div>
             </div>
