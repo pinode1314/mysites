@@ -3,51 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的常用软件与网站导航</title>
+  <title>CYBER_NAV // 常用软件与网站导航</title>
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --text-main: #0f172a;
-      --text-sub: #64748b;
-      --accent: #2563eb;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 10px 20px -3px rgba(37, 99, 235, 0.15);
-      --badge-bg: #eff6ff;
-    }
-
-    [data-theme="dark"] {
-      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      --card-bg: #1e293b;
-      --card-border: #334155;
-      --text-main: #f8fafc;
-      --text-sub: #94a3b8;
-      --accent: #60a5fa;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-      --shadow-hover: 0 10px 20px -3px rgba(96, 165, 250, 0.2);
-      --badge-bg: #1e293b;
+      --bg-color: #050b14;
+      --card-bg: rgba(10, 25, 47, 0.75);
+      --card-border: #00f0ff;
+      --card-border-dim: rgba(0, 240, 255, 0.2);
+      --text-main: #e2f1ff;
+      --text-sub: #647ebb;
+      --neon-cyan: #00f0ff;
+      --neon-purple: #bc13fe;
+      --neon-pink: #ff007f;
+      --shadow-glow: 0 0 15px rgba(0, 240, 255, 0.25);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      transition: background-color 0.25s, border-color 0.25s, color 0.25s, transform 0.2s, box-shadow 0.2s;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: var(--bg-gradient);
+      font-family: 'Consolas', 'Fira Code', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      /* 赛博网格与渐变背景 */
+      background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 50% 20%, rgba(188, 19, 254, 0.15) 0%, transparent 60%);
+      background-size: 30px 30px, 30px 30px, 100% 100%;
       background-attachment: fixed;
       color: var(--text-main);
       min-height: 100vh;
       padding: 2.5rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* 屏幕轻微电视扫描线特效 */
+    body::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+      background-size: 100% 4px;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.6;
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
+      position: relative;
+      z-index: 10;
     }
 
     header {
@@ -55,22 +67,30 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2.5rem;
-      gap: 1rem;
+      margin-bottom: 3rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--card-border-dim);
+      padding-bottom: 1.5rem;
     }
 
     .header-title {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1rem;
+    }
+
+    .glitch-icon {
+      font-size: 2.2rem;
+      text-shadow: 0 0 10px var(--neon-cyan);
     }
 
     h1 {
-      font-size: 1.85rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 8px var(--neon-cyan), 0 0 20px rgba(0, 240, 255, 0.4);
     }
 
     .controls {
@@ -80,45 +100,39 @@
     }
 
     .search-box input {
-      padding: 0.65rem 1.2rem;
-      border-radius: 12px;
-      border: 1px solid var(--card-border);
-      background: var(--card-bg);
-      color: var(--text-main);
+      padding: 0.75rem 1.2rem;
+      border-radius: 4px;
+      border: 1px solid var(--card-border-dim);
+      background: rgba(5, 11, 20, 0.8);
+      color: var(--neon-cyan);
       outline: none;
-      font-size: 0.95rem;
-      width: 240px;
-      box-shadow: var(--shadow);
+      font-size: 0.9rem;
+      font-family: inherit;
+      width: 260px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
     }
 
     .search-box input:focus {
-      border-color: var(--accent);
-      width: 280px;
-    }
-
-    .theme-toggle {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-      padding: 0.65rem 1.2rem;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-2px);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.1);
+      width: 300px;
     }
 
     .section-title {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin: 2.5rem 0 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.8rem;
+      color: var(--neon-cyan);
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+    }
+
+    .section-title::before {
+      content: '//';
+      color: var(--neon-pink);
     }
 
     .grid {
@@ -129,35 +143,56 @@
 
     .nav-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border-dim);
+      border-left: 3px solid var(--neon-cyan);
+      border-radius: 4px;
       padding: 1.1rem 1.25rem;
       text-decoration: none;
       color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 1rem;
-      box-shadow: var(--shadow);
       position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    }
+
+    /* 科幻角标修饰 */
+    .nav-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 8px; height: 8px;
+      background: var(--neon-cyan);
+      opacity: 0.5;
     }
 
     .nav-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent);
+      transform: translateY(-3px);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+      background: rgba(10, 30, 60, 0.85);
     }
 
     .icon-badge {
       width: 44px;
       height: 44px;
       min-width: 44px;
-      border-radius: 12px;
-      background: var(--badge-bg);
-      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      background: rgba(0, 240, 255, 0.05);
+      border: 1px solid var(--card-border-dim);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
+      box-shadow: inset 0 0 8px rgba(0, 240, 255, 0.1);
+    }
+
+    .nav-card:hover .icon-badge {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+      background: rgba(0, 240, 255, 0.15);
     }
 
     .card-content {
@@ -169,8 +204,8 @@
 
     .card-title {
       font-weight: 600;
-      font-size: 0.98rem;
-      color: var(--text-main);
+      font-size: 0.95rem;
+      color: #fff;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -180,36 +215,41 @@
     }
 
     .nav-card:hover .card-title {
-      color: var(--accent);
+      color: var(--neon-cyan);
+      text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
     }
 
     .card-link {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--text-sub);
-      margin-top: 0.25rem;
+      margin-top: 0.3rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .arrow-icon {
-      font-size: 0.75rem;
-      opacity: 0;
-      transform: translate(-4px, 4px);
+      font-size: 0.8rem;
+      color: var(--neon-pink);
+      opacity: 0.5;
       transition: all 0.2s ease;
     }
 
     .nav-card:hover .arrow-icon {
       opacity: 1;
-      transform: translate(0, 0);
-      color: var(--accent);
+      color: var(--neon-cyan);
+      transform: translate(2px, -2px);
+      text-shadow: 0 0 5px var(--neon-cyan);
     }
 
     footer {
       margin-top: 4rem;
       text-align: center;
       color: var(--text-sub);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      border-top: 1px solid var(--card-border-dim);
+      padding-top: 1.5rem;
     }
   </style>
 </head>
@@ -218,14 +258,13 @@
   <div class="container">
     <header>
       <div class="header-title">
-        <span style="font-size: 2rem;">🚀</span>
-        <h1>我的常用软件与网站导航</h1>
+        <span class="glitch-icon">⚡</span>
+        <h1>CYBER_NAV // 软件与网站导航</h1>
       </div>
       <div class="controls">
         <div class="search-box">
-          <input type="text" id="searchInput" placeholder="🔍 搜索工具或网站..." onkeyup="filterLinks()">
+          <input type="text" id="searchInput" placeholder="SEARCH_NODE..." onkeyup="filterLinks()">
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()">🌓 切换主题</button>
       </div>
     </header>
 
@@ -486,20 +525,11 @@
     </div>
 
     <footer>
-      <p>常用软件与网站导航 · 点击任意卡片即可在新标签页中打开</p>
+      <p>SYSTEM STATUS: ONLINE // 点击卡片即可开启新指令链接</p>
     </footer>
   </div>
 
   <script>
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    }
-
     function filterLinks() {
       const input = document.getElementById('searchInput');
       const filter = input.value.toLowerCase();
