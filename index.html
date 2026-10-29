@@ -158,6 +158,20 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .icon-badge img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    /* 隐藏带有备用 Emoji 的元素，当图片加载失败时显示 */
+    .icon-badge .fallback-emoji {
+      display: none;
+      position: absolute;
     }
 
     .card-content {
@@ -233,7 +247,10 @@
     <h2 class="section-title">🌐 官方与节点、云服务</h2>
     <div class="grid">
       <a class="nav-card" href="https://minepi.com/" target="_blank">
-        <div class="icon-badge">🌐</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=minepi.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🌐</span>
+        </div>
         <div class="card-content">
           <div class="card-title">Pi Network官方网站 <span class="arrow-icon">↗</span></div>
           <div class="card-link">minepi.com</div>
@@ -241,7 +258,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/pi-node/pi-node/releases" target="_blank">
-        <div class="icon-badge">📦</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">📦</span>
+        </div>
         <div class="card-content">
           <div class="card-title">Pi Network节点下载 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/pi-node</div>
@@ -249,7 +269,10 @@
       </a>
 
       <a class="nav-card" href="https://my.racknerd.com/" target="_blank">
-        <div class="icon-badge">☁️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=racknerd.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">☁️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">racknerd云服购买平台 <span class="arrow-icon">↗</span></div>
           <div class="card-link">my.racknerd.com</div>
@@ -257,7 +280,10 @@
       </a>
 
       <a class="nav-card" href="https://www.aliyun.com/" target="_blank">
-        <div class="icon-badge">☁️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=aliyun.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">☁️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">阿里云云服官方网站 <span class="arrow-icon">↗</span></div>
           <div class="card-link">aliyun.com</div>
@@ -265,7 +291,10 @@
       </a>
 
       <a class="nav-card" href="https://cloud.tencent.com/" target="_blank">
-        <div class="icon-badge">☁️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=cloud.tencent.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">☁️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">腾讯云服官方网站 <span class="arrow-icon">↗</span></div>
           <div class="card-link">cloud.tencent.com</div>
@@ -273,7 +302,10 @@
       </a>
 
       <a class="nav-card" href="https://docs.docker.com/desktop/release-notes/" target="_blank">
-        <div class="icon-badge">🐳</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=docker.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🐳</span>
+        </div>
         <div class="card-content">
           <div class="card-title">docker官方网站 <span class="arrow-icon">↗</span></div>
           <div class="card-link">docs.docker.com</div>
@@ -285,7 +317,10 @@
     <h2 class="section-title">🛠️ 代理与科学上网工具</h2>
     <div class="grid">
       <a class="nav-card" href="https://github.com/2dust/v2rayN/releases" target="_blank">
-        <div class="icon-badge">🚀</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🚀</span>
+        </div>
         <div class="card-content">
           <div class="card-title">v2rayN官方开源 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/2dust/v2rayN</div>
@@ -293,7 +328,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/KaringX/karing/releases" target="_blank">
-        <div class="icon-badge">🛠️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🛠️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">Karing官方开源 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/KaringX/karing</div>
@@ -301,7 +339,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank">
-        <div class="icon-badge">✈️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">✈️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">Clash Verge官方网站 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/clash-verge-rev</div>
@@ -309,7 +350,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank">
-        <div class="icon-badge">📱</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">📱</span>
+        </div>
         <div class="card-content">
           <div class="card-title">ClashMeta官方安卓版 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/MetaCubeX</div>
@@ -317,7 +361,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank">
-        <div class="icon-badge">🎉</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🎉</span>
+        </div>
         <div class="card-content">
           <div class="card-title">mihomo-party官方开源 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/mihomo-party-org</div>
@@ -325,7 +372,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/SagerNet/sing-box/releases" target="_blank">
-        <div class="icon-badge">📦</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">📦</span>
+        </div>
         <div class="card-content">
           <div class="card-title">SingBox官方开源 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/SagerNet/sing-box</div>
@@ -333,7 +383,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/fatedier/frp/releases" target="_blank">
-        <div class="icon-badge">🔗</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🔗</span>
+        </div>
         <div class="card-content">
           <div class="card-title">frp官方开源 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/fatedier/frp</div>
@@ -341,7 +394,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/user-attachments/files/32280547/frp_0.71.0_windows_amd64.zip" target="_blank">
-        <div class="icon-badge">💾</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">💾</span>
+        </div>
         <div class="card-content">
           <div class="card-title">自用frp仓库 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/user-attachments</div>
@@ -349,7 +405,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/ehang-io/nps/releases/" target="_blank">
-        <div class="icon-badge">🌐</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🌐</span>
+        </div>
         <div class="card-content">
           <div class="card-title">NPS官方开源下载地址 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/ehang-io/nps</div>
@@ -361,7 +420,10 @@
     <h2 class="section-title">💻 远程与运维</h2>
     <div class="grid">
       <a class="nav-card" href="https://www.hostbuf.com/" target="_blank">
-        <div class="icon-badge">💻</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=hostbuf.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">💻</span>
+        </div>
         <div class="card-content">
           <div class="card-title">finalshell官方 <span class="arrow-icon">↗</span></div>
           <div class="card-link">hostbuf.com</div>
@@ -369,7 +431,10 @@
       </a>
 
       <a class="nav-card" href="https://www.todesk.com/" target="_blank">
-        <div class="icon-badge">🖥️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=todesk.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🖥️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">ToDesk远程 <span class="arrow-icon">↗</span></div>
           <div class="card-link">todesk.com</div>
@@ -377,7 +442,10 @@
       </a>
 
       <a class="nav-card" href="https://www.deskin.io/zht" target="_blank">
-        <div class="icon-badge">🖥️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=deskin.io&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🖥️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">deskin远程官方 <span class="arrow-icon">↗</span></div>
           <div class="card-link">deskin.io</div>
@@ -385,7 +453,10 @@
       </a>
 
       <a class="nav-card" href="https://sunlogin.oray.com" target="_blank">
-        <div class="icon-badge">🌻</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=oray.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🌻</span>
+        </div>
         <div class="card-content">
           <div class="card-title">向日葵远程 <span class="arrow-icon">↗</span></div>
           <div class="card-link">sunlogin.oray.com</div>
@@ -393,7 +464,10 @@
       </a>
 
       <a class="nav-card" href="https://uuyc.163.com/" target="_blank">
-        <div class="icon-badge">🎮</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=163.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🎮</span>
+        </div>
         <div class="card-content">
           <div class="card-title">UU远程 <span class="arrow-icon">↗</span></div>
           <div class="card-link">uuyc.163.com</div>
@@ -401,7 +475,10 @@
       </a>
 
       <a class="nav-card" href="https://www.raylink.live" target="_blank">
-        <div class="icon-badge">⚡</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=raylink.live&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">⚡</span>
+        </div>
         <div class="card-content">
           <div class="card-title">RayLink远程控制软件 <span class="arrow-icon">↗</span></div>
           <div class="card-link">raylink.live</div>
@@ -413,7 +490,10 @@
     <h2 class="section-title">📦 其他下载与检测工具</h2>
     <div class="grid">
       <a class="nav-card" href="https://apkcombo.com/zh/" target="_blank">
-        <div class="icon-badge">📲</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=apkcombo.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">📲</span>
+        </div>
         <div class="card-content">
           <div class="card-title">手机app下载平台 <span class="arrow-icon">↗</span></div>
           <div class="card-link">apkcombo.com</div>
@@ -421,7 +501,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/microsoft/WSL/releases" target="_blank">
-        <div class="icon-badge">🐧</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🐧</span>
+        </div>
         <div class="card-content">
           <div class="card-title">WSL2下载地址 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/microsoft/WSL</div>
@@ -429,7 +512,10 @@
       </a>
 
       <a class="nav-card" href="https://openvpn.net/downloads/openvpn-connect-v3-windows.msi" target="_blank">
-        <div class="icon-badge">🔒</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=openvpn.net&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🔒</span>
+        </div>
         <div class="card-content">
           <div class="card-title">OpenVPN 官方安装包 <span class="arrow-icon">↗</span></div>
           <div class="card-link">openvpn.net</div>
@@ -437,7 +523,10 @@
       </a>
 
       <a class="nav-card" href="https://swupdate.openvpn.org/community/releases/OpenVPN-2.7.7-I001-amd64.msi" target="_blank">
-        <div class="icon-badge">🔓</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=openvpn.org&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🔓</span>
+        </div>
         <div class="card-content">
           <div class="card-title">OpenVPN 社区GUI版 <span class="arrow-icon">↗</span></div>
           <div class="card-link">swupdate.openvpn.org</div>
@@ -445,7 +534,10 @@
       </a>
 
       <a class="nav-card" href="https://github.com/lmc999/auto-add-routes" target="_blank">
-        <div class="icon-badge">🗺️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🗺️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">openvpn分流路由表 <span class="arrow-icon">↗</span></div>
           <div class="card-link">github.com/lmc999</div>
@@ -453,7 +545,10 @@
       </a>
 
       <a class="nav-card" href="https://www.wireguard.com/install/" target="_blank">
-        <div class="icon-badge">🛡️</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=wireguard.com&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🛡️</span>
+        </div>
         <div class="card-content">
           <div class="card-title">wireguard官方 <span class="arrow-icon">↗</span></div>
           <div class="card-link">wireguard.com</div>
@@ -461,7 +556,10 @@
       </a>
 
       <a class="nav-card" href="https://ip.skk.moe/" target="_blank">
-        <div class="icon-badge">🔍</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=skk.moe&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">🔍</span>
+        </div>
         <div class="card-content">
           <div class="card-title">查分流 <span class="arrow-icon">↗</span></div>
           <div class="card-link">ip.skk.moe</div>
@@ -469,7 +567,10 @@
       </a>
 
       <a class="nav-card" href="https://ping0.cc/" target="_blank">
-        <div class="icon-badge">📊</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=ping0.cc&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">📊</span>
+        </div>
         <div class="card-content">
           <div class="card-title">检测 IP 质量 (ping0) <span class="arrow-icon">↗</span></div>
           <div class="card-link">ping0.cc</div>
@@ -477,7 +578,10 @@
       </a>
 
       <a class="nav-card" href="https://ipdata.co/" target="_blank">
-        <div class="icon-badge">📡</div>
+        <div class="icon-badge">
+          <img src="https://www.google.com/s2/favicons?domain=ipdata.co&sz=128" alt="icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-emoji">📡</span>
+        </div>
         <div class="card-content">
           <div class="card-title">检测 IP 质量 (ipdata) <span class="arrow-icon">↗</span></div>
           <div class="card-link">ipdata.co</div>
